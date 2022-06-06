@@ -1,0 +1,7 @@
+<ng-container *ngIf="columnInfo.columnType !== 'action';else buttons">
+    <td>{{value}}</td>
+</ng-container>
+<ng-template #buttons>
+    <button *ngIf="columnInfo.allowEditing">Edit</button>
+    <button *ngIf="columnInfo.allowDeleting">Delete</button>
+</ng-template>

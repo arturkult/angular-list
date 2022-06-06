@@ -1,1 +1,96 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+
+.table {
+    width: 100%;
+
+    .table-header-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        .table-header {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            border-bottom: 1px solid #1d1d1d;
+            padding: 5px;
+            flex: 5;
+
+            &~.table-header {
+                border-left: 1px solid #1d1d1d;
+            }
+            
+            &.buttons {
+                flex: 1;
+            }
+
+            .mat-icon {
+                font-size: 150%;
+                height: auto;
+                width: auto;
+                float: right;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+
+            input {
+                transition: transform 2s;
+            }
+        }
+
+    }
+
+    .table-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+
+        .table-column {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            padding: 5px;
+
+            &~.table-column {
+                border-left: 1px solid #1d1d1d;
+            }
+
+        }
+
+        
+        .table-column {
+            flex: 5;
+        }
+
+        .table-column.buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex: 1;
+        }
+
+        &:hover {
+            background-color: #dddddd;
+        }
+
+
+    }
+}
