@@ -6,7 +6,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
+import { AbstractControl, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 
 @Component({
@@ -30,8 +30,8 @@ export class ListHeaderComponent implements OnInit {
     return this.form.controls.filter;
   }
 
-  private form: FormGroup = new FormGroup({
-    filter: new FormControl(null),
+  private form: UntypedFormGroup = new UntypedFormGroup({
+    filter: new UntypedFormControl(null),
   });
 
   constructor() {
