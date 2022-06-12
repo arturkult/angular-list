@@ -7,7 +7,6 @@ import { ListComponent } from './list/list.component';
 import { ListColumnComponent } from './list/list-column/list-column.component';
 import { ListHeaderComponent } from './list/list-header/list-header.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatIconModule } from '@angular/material/icon';
 import { PagerComponent } from './list/pager/pager.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
