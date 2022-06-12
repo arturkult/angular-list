@@ -1,15 +1,57 @@
 <ng-container>
-  <th>
+  <th scope="col" class="d-flex justify-content-between align-items-center">
     <ng-container *ngIf="columnType !== 'action'">
       <ng-container>
-        <form [style.display]="searchOpened ? 'block' : 'none'">
-          <input type="text" [formControl]="filterControl" [placeholder]="propertyName" />
-          <mat-icon (click)="searchOpened = false">close</mat-icon>
-        </form>
+        <div
+          [style.display]="searchOpened ? 'flex' : 'none'"
+          class="align-items-center"
+        >
+          <div class="input-group">
+            <input
+              class="form-control"
+              type="text"
+              [formControl]="filterControl"
+              [placeholder]="propertyName"
+            />
+            <i
+              role="button"
+              (click)="clearFilter(); searchOpened = false"
+              class="bi bi-x-lg input-group-text"
+            ></i>
+          </div>
+        </div>
       </ng-container>
       <ng-container *ngIf="!searchOpened">
-        <span>{{ propertyName }}</span>
-        <mat-icon (click)="searchOpened = true">search</mat-icon>
+        <div
+          class="d-flex user-select-none align-items-center"
+          role="button"
+          (click)="sort()"
+        >
+          <span>
+            {{ propertyName }}
+          </span>
+          <span class="d-flex flex-column">
+            <i
+              class="bi"
+              [ngClass]="
+                currentDirection === 'desc' ? 'bi-caret-up-fill' : 'bi-caret-up'
+              "
+            ></i>
+            <i
+              class="bi"
+              [ngClass]="
+                currentDirection === 'asc'
+                  ? 'bi-caret-down-fill'
+                  : 'bi-caret-down'
+              "
+            ></i>
+          </span>
+        </div>
+        <i
+          role="button"
+          (click)="searchOpened = true"
+          class="bi bi-search mx-2"
+        ></i>
       </ng-container>
     </ng-container>
   </th>

@@ -1,13 +1,56 @@
-<table class="table">
-  <tr class="table-header-row">
-    <ng-content select="app-list-header"></ng-content>
-  </tr>
-  <tr *ngFor="let item of dataSource" class="table-row">
-    <app-list-column
-      *ngFor="let columnInfo of displayedColumns"
-      [value]="item[columnInfo.propertyName]"
-      [columnInfo]="columnInfo"
-      class="table-column"
-    ></app-list-column>
-  </tr>
+<table class="table table-striped d-flex flex-column">
+  <thead class="position-sticky top-0 bg-white">
+    <tr class="d-flex justify-content-around table-primary">
+      <ng-content select="app-list-header"></ng-content>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let item of dataSource.items; let i = index"
+      class="d-flex justify-content-around"
+    >
+      <td
+        class="w-100 px-2 d-flex justify-content-center"
+        *ngFor="let propertyName of orderColumns"
+        [class.flex-column]="displayColumns.get(propertyName).columnType !== 'action'"
+        [class.flex-grow-1]="displayColumns.get(propertyName).columnType !== 'action'"
+        [class.text-end]="displayColumns.get(propertyName).columnType === 'number'"
+      >
+        <ng-container [ngSwitch]="displayColumns.get(propertyName).columnType">
+          <ng-container *ngSwitchCase="'action'">
+            <div class="btn-group" role="group">
+              <button
+                *ngIf="displayColumns.get(propertyName).allowEditing"
+                class="btn btn-primary"
+                type="button"
+                (click)="editClicked.emit(item)"
+              >
+                <span class="mx-2">Edit</span>
+                <i class="bi bi-pencil"></i>
+              </button>
+              <button
+                *ngIf="displayColumns.get(propertyName).allowDeleting"
+                class="btn btn-danger"
+                (click)="deleteClicked.emit(item)"
+              >
+                <span class="mx-2">Delete</span>
+                <i class="bi bi-trash"></i>
+              </button>
+            </div>
+          </ng-container>
+          <ng-container *ngSwitchDefault>
+            {{ item[propertyName] }}
+          </ng-container>
+        </ng-container>
+      </td>
+    </tr>
+  </tbody>
+
+  <app-pager
+    class="position-sticky bottom-0 bg-white"
+    [currentPage]="currentQuery.currentPage"
+    [totalPages]="dataSource.totalResults/currentQuery.resultsPerPage"
+    (pageChange)="onPageChange($event)"
+    (pageSizeChange)="onPageSizeChange($event)"
+  ></app-pager>
 </table>

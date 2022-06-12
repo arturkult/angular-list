@@ -1,7 +1,7 @@
-<app-list [dataSource]="data">
+<app-list [dataSource]="queryResult" (queryChange)="onQueryChange($event)">
   <app-list-header propertyName="name" filterType="contains"></app-list-header>
   <app-list-header propertyName="job" filterType="contains"></app-list-header>
   <app-list-header propertyName="address" filterType="contains"></app-list-header>
-  <app-list-header propertyName="salary" filterType="contains"></app-list-header>
+  <app-list-header propertyName="salary" columnType="number" filterType="contains"></app-list-header>
   <app-list-header columnType="action" [allowEditing]="true" [allowDeleting]="true"></app-list-header>
-</app-list>
+</app-list> 

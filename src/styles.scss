@@ -1,96 +1,97 @@
-/* You can add global styles to this file, and also import other style files */
+// /* You can add global styles to this file, and also import other style files */
 
-html,
-body {
-    height: 100%;
-}
+// html,
+// body {
+//     height: 100%;
+// }
 
-body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-}
+// body {
+//     margin: 0;
+//     font-family: Roboto, "Helvetica Neue", sans-serif;
+// }
 
+// .table {
+//     width: 100%;
 
+//     .table-header-row {
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: space-evenly;
 
-.table {
-    width: 100%;
+//         .table-header {
+//             width: 100%;
+//             display: flex;
+//             flex-direction: column;
+//             justify-content: center;
+//             align-content: center;
+//             border-bottom: 1px solid #646464;
+//             padding: 5px;
+//             flex: 5;
 
-    .table-header-row {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-
-        .table-header {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-content: center;
-            border-bottom: 1px solid #1d1d1d;
-            padding: 5px;
-            flex: 5;
-
-            &~.table-header {
-                border-left: 1px solid #1d1d1d;
-            }
+//             &~.table-header {
+//                 border-left: 1px solid #646464;
+//             }
             
-            &.buttons {
-                flex: 1;
-            }
+//             &.buttons {
+//                 flex: 1;
+//             }
 
-            .mat-icon {
-                font-size: 150%;
-                height: auto;
-                width: auto;
-                float: right;
-                &:hover {
-                    cursor: pointer;
-                }
-            }
+//             .mat-icon {
+//                 font-size: 150%;
+//                 height: auto;
+//                 width: auto;
+//                 float: right;
+//                 &:hover {
+//                     cursor: pointer;
+//                 }
+//             }
 
-            input {
-                transition: transform 2s;
-            }
-        }
+//             input {
+//                 transition: transform 2s;
+//             }
+//         }
 
-    }
+//     }
 
-    .table-row {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+//     .table-row {
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: space-evenly;
 
 
-        .table-column {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-content: center;
-            padding: 5px;
+//         .table-column {
+//             width: 100%;
+//             display: flex;
+//             flex-direction: column;
+//             justify-content: center;
+//             align-content: center;
+//             padding: 5px;
 
-            &~.table-column {
-                border-left: 1px solid #1d1d1d;
-            }
+//             &~.table-column {
+//                 border-left: 1px solid #646464;
+//             }
 
-        }
+//         }
 
         
-        .table-column {
-            flex: 5;
-        }
+//         .table-column {
+//             flex: 5;
+//         }
 
-        .table-column.buttons {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            flex: 1;
-        }
+//         .table-column.buttons {
+//             display: flex;
+//             flex-direction: row;
+//             justify-content: space-evenly;
+//             flex: 1;
+//         }
 
-        &:hover {
-            background-color: #dddddd;
-        }
+//         &:hover {
+//             background-color: #dddddd;
+//         }
 
 
-    }
-}
+//     }
+// }
+// /* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
